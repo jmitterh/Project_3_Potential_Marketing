@@ -18,6 +18,7 @@ Team:
 * DashPlotly
 * Data from Comptroller Of Public Accounts
 * Dynamic Map
+* Machine Learning
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the following:
