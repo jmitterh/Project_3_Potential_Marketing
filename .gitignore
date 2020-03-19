@@ -1,5 +1,7 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+CRE_Marketing_Data/__pycache__/
+CRE_Marketing_Data/.ipynb_checkpoints/
 *.py[cod]
 *$py.class
 
@@ -127,3 +129,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Marketing data
+CRE_Marketing_Data/HotelOccupancyTaxData/
+CRE_Marketing_Data/db_setup.py
+
+# idea
+.idea/
+
+#VS Code
+CRE_Marketing_Data/.vscode/
