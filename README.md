@@ -1,7 +1,7 @@
 
 ![](https://www.xendoo.com/wp-content/uploads/2019/02/Benefits-Owning-Your-Small-Business-Property-Blog-795x500.jpg)
 
-# Project 3 - Marketing
+# Project 3: Data-Estate
 
 Team:
 * Jean-Paul Mitterhofer
@@ -11,8 +11,10 @@ Team:
 
 ## Project Description
 
-    Creating a Dashboard of the potential tenants so Commercial Real-Estate Companies can target clients per mile radius. Map of building locations with new and established companies around a 5 mile radius for each building. A list on the left side panel displaying company name, similar to a google map search.
-    
+Creating a Dashboard of the Potential tenants so Commercial Real-Estate Companies can target clients per mile radius. Map of building locations with new and established companies around a 5 mile radius for each building. A list on the left side panel displaying company name, similar to a google map search. This can possibly change as we further understand our data; might try using historical economic trends that tell what areas to market to based on zip code or something similar.
+
+## 
+
 
  ## Requirements
 * MySQL Database 
@@ -47,6 +49,22 @@ To be determined
  Available datasets: 
 
     * Hotel Tax Receipts
+
+* ***Reverse Geocoding***
+* ***Harris County Appraisal District - HCAD (possibly)***
+* ***Economical Trends (possibly)***
+
+## Type of ML Analysis
+* CLustering
+* Regression (still determining)
+
+## Ideas of Visualization
+* Geo Map:
+    * Pin drop of new companies created
+    * Pin drop of commercial real estate
+    * Categorical Distribution
+    * Zip Code Filter
+    * Dynamic Visualization
 
 ## Considerations
 **To Be Determined**
