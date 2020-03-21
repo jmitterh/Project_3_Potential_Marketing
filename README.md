@@ -5,6 +5,7 @@
 
 Team:
 * Jean-Paul Mitterhofer
+* Mahathi Veluri 
 * Baoxing Wang
 * Xiaodi Lin
 
