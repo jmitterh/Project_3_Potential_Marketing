@@ -10,22 +10,24 @@ USE `bot_cre_marketing` ;
 -- -----------------------------------------------------
 
 DROP TABLE IF EXISTS ccim ;
-DROP TABLE IF EXISTS ftact ;
-DROP TABLE IF EXISTS ftact_date ;
+DROP TABLE IF EXISTS franchise_tax_info ;
+DROP TABLE IF EXISTS franchise_tax_info_date ;
 DROP TABLE IF EXISTS ftoffdir ;
-DROP TABLE IF EXISTS stact ;
-DROP TABLE IF EXISTS stact_date ;
+DROP TABLE IF EXISTS sales_tax_info ;
+DROP TABLE IF EXISTS sales_tax_info_date ;
 
 -- -----------------------------------------------------
 -- SELECT STATEMENTS
 -- -----------------------------------------------------
 
 SELECT * FROM  ccim ;
-SELECT * FROM  ftact ;
-SELECT * FROM  ftact_date ;
+SELECT * FROM  franchise_tax_info ;
+SELECT * FROM  franchise_tax_info_date ;
+SELECT COUNT(*) FROM  franchise_tax_info_date ;
 SELECT * FROM  ftoffdir ;
-SELECT * FROM  stact ;
-SELECT * FROM  stact_date ;
+SELECT * FROM  sales_tax_info ;
+SELECT * FROM  sales_tax_info_date ;
+SELECT COUNT(*) FROM  sales_tax_info_date ;
 
 -- -----------------------------------------------------
 -- Table ccim
@@ -54,9 +56,9 @@ CREATE TABLE IF NOT EXISTS ccim (
   INDEX `ix_ccim_index` (`index` ASC) VISIBLE);
 
 -- -----------------------------------------------------
--- Table ftact
+-- Table franchise_tax_info
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS ftact (
+CREATE TABLE IF NOT EXISTS franchise_tax_info (
   `Taxpayer_Number` BIGINT NULL DEFAULT NULL,
   `Taxpayer_Name` VARCHAR(100) NULL DEFAULT NULL,
   `Taxpayer_Address` VARCHAR(100) NULL DEFAULT NULL,
@@ -78,12 +80,17 @@ CREATE TABLE IF NOT EXISTS ftact (
   `Current_Exempt_Reason_Code` FLOAT NULL DEFAULT NULL,
   `Exempt_Begin_Date` FLOAT NULL DEFAULT NULL,
   `NAICS_Code` FLOAT NULL DEFAULT NULL,
+  `Taxpayer_Organizational_Name` VARCHAR(100) NULL DEFAULT NULL, -- added new column
+  `Record_Type_Name` VARCHAR(100) NULL DEFAULT NULL, -- added new column
+  `Responsibility_End_Reason_Name` VARCHAR(100) NULL DEFAULT NULL, -- added new column
+  `SOS_Status_Name` VARCHAR(100) NULL DEFAULT NULL, -- added new column
+  `Rigth_to_Tansact_Business_Name` VARCHAR(100) NULL DEFAULT NULL, -- added new column
   `DateTime` VARCHAR(100) NULL DEFAULT NULL);
 
 -- -----------------------------------------------------
--- Table ftact_date
+-- Table franchise_tax_info_date
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS ftact_date (
+CREATE TABLE IF NOT EXISTS franchise_tax_info_date (
   `Taxpayer_Number` BIGINT NULL DEFAULT NULL,
   `Taxpayer_Name` VARCHAR(100) NULL DEFAULT NULL,
   `Taxpayer_Address` VARCHAR(100) NULL DEFAULT NULL,
@@ -104,7 +111,10 @@ CREATE TABLE IF NOT EXISTS ftact_date (
   `Agent_City` VARCHAR(100) NULL DEFAULT NULL,
   `Agent_State` VARCHAR(100) NULL DEFAULT NULL,
   `Agent_Zip_Code` VARCHAR(100) NULL DEFAULT NULL,
+  `Taxpayer_Organizational_Name` VARCHAR(100) NULL DEFAULT NULL, -- added new column
+  `Record_Type_Name` VARCHAR(100) NULL DEFAULT NULL, -- added new column
   `DateTime` VARCHAR(100) NULL DEFAULT NULL);
+  
 
 -- -----------------------------------------------------
 -- Table ftoffdir
@@ -122,16 +132,16 @@ CREATE TABLE IF NOT EXISTS ftoffdir (
   `DateTime` VARCHAR(100) NULL DEFAULT NULL);
   
 -- -----------------------------------------------------
--- Table stact
+-- Table sales_tax_info
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS stact (
+CREATE TABLE IF NOT EXISTS sales_tax_info (
   `Taxpayer_Number` BIGINT NULL DEFAULT NULL,
   `Outlet_Number` BIGINT NULL DEFAULT NULL,
   `Taxpayer_Name` VARCHAR(100) NULL DEFAULT NULL,
   `Taxpayer_Address` VARCHAR(100) NULL DEFAULT NULL,
   `Taxpayer_City` VARCHAR(100) NULL DEFAULT NULL,
   `Taxpayer_State` VARCHAR(100) NULL DEFAULT NULL,
-  `Taxpayer_Zip Code` VARCHAR(100) NULL DEFAULT NULL,
+  `Taxpayer_Zip_Code` VARCHAR(100) NULL DEFAULT NULL,
   `Taxpayer_County_Code` BIGINT NULL DEFAULT NULL,
   `Taxpayer_Phone_Number` VARCHAR(100) NULL DEFAULT NULL,
   `Taxpayer_Organizational_Type` VARCHAR(100) NULL DEFAULT NULL,
@@ -139,19 +149,20 @@ CREATE TABLE IF NOT EXISTS stact (
   `Outlet_Address` VARCHAR(100) NULL DEFAULT NULL,
   `Outlet_City` VARCHAR(100) NULL DEFAULT NULL,
   `Outlet_State` VARCHAR(100) NULL DEFAULT NULL,
-  `Outlet_Zip_Code` BIGINT NULL DEFAULT NULL,
+  `Outlet_Zip_Code` VARCHAR(100) NULL DEFAULT NULL,
   `Outlet_County_Code` FLOAT NULL DEFAULT NULL,
   `Outlet_Phone_Number` VARCHAR(100) NULL DEFAULT NULL,
   `Outlet_NAICS_Code` FLOAT NULL DEFAULT NULL,
   `Outlet_Inside_Outside_City_Limits_Indicator` VARCHAR(100) NULL DEFAULT NULL,
   `Outlet_Permit_Issue_Date` FLOAT NULL DEFAULT NULL,
   `Outlet_First_Sales_Date` BIGINT NULL DEFAULT NULL,
+  `Taxpayer_Organizational_Name` VARCHAR(100) NULL DEFAULT NULL, -- added new column
   `DateTime` VARCHAR(100) NULL DEFAULT NULL);
 
 -- -----------------------------------------------------
--- Table stact_date
+-- Table sales_tax_info_date
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS stact_date (
+CREATE TABLE IF NOT EXISTS sales_tax_info_date (
   `Agent_Address` VARCHAR(100) NULL DEFAULT NULL,
   `Agent_City` VARCHAR(100) NULL DEFAULT NULL,
   `Agent_Name` VARCHAR(100) NULL DEFAULT NULL,
@@ -185,4 +196,5 @@ CREATE TABLE IF NOT EXISTS stact_date (
   `Taxpayer_Phone_Number` VARCHAR(100) NULL DEFAULT NULL,
   `Taxpayer_State` VARCHAR(100) NULL DEFAULT NULL,
   `Taxpayer_Zip_Code` VARCHAR(100) NULL DEFAULT NULL,
+  `Taxpayer_Organizational_Name` VARCHAR(100) NULL DEFAULT NULL, -- added new column
   `DateTime` VARCHAR(100) NULL DEFAULT NULL);
