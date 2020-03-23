@@ -9,12 +9,12 @@ USE `bot_cre_marketing` ;
 -- DROP TABLE
 -- -----------------------------------------------------
 
-DROP TABLE IF EXISTS ccim ;
-DROP TABLE IF EXISTS franchise_tax_info ;
-DROP TABLE IF EXISTS franchise_tax_info_date ;
-DROP TABLE IF EXISTS ftoffdir ;
-DROP TABLE IF EXISTS sales_tax_info ;
-DROP TABLE IF EXISTS sales_tax_info_date ;
+-- DROP TABLE IF EXISTS ccim ;
+-- DROP TABLE IF EXISTS franchise_tax_info ;
+-- DROP TABLE IF EXISTS franchise_tax_info_date ;
+-- DROP TABLE IF EXISTS ftoffdir ;
+-- DROP TABLE IF EXISTS sales_tax_info ;
+-- DROP TABLE IF EXISTS sales_tax_info_date ;
 
 -- -----------------------------------------------------
 -- SELECT STATEMENTS
@@ -23,11 +23,58 @@ DROP TABLE IF EXISTS sales_tax_info_date ;
 SELECT * FROM  ccim ;
 SELECT * FROM  franchise_tax_info ;
 SELECT * FROM  franchise_tax_info_date ;
-SELECT COUNT(*) FROM  franchise_tax_info_date ;
 SELECT * FROM  ftoffdir ;
 SELECT * FROM  sales_tax_info ;
 SELECT * FROM  sales_tax_info_date ;
+
+SELECT COUNT(*) FROM  ftoffdir ;
+SELECT COUNT(*) FROM  franchise_tax_info ;
+SELECT COUNT(*) FROM  franchise_tax_info_date ;
+SELECT COUNT(*) FROM  sales_tax_info ;
 SELECT COUNT(*) FROM  sales_tax_info_date ;
+
+SELECT * FROM  franchise_tax_info_date 
+WHERE Taxpayer_City = 'HOUSTON';
+SELECT * FROM  sales_tax_info_date 
+WHERE Taxpayer_City = 'HOUSTON';
+SELECT * FROM  franchise_tax_info 
+WHERE Taxpayer_City = 'HOUSTON';
+SELECT * FROM  sales_tax_info 
+WHERE Taxpayer_City = 'HOUSTON';
+
+SELECT COUNT(*) FROM  franchise_tax_info_date 
+WHERE Taxpayer_City = 'HOUSTON';
+SELECT COUNT(*) FROM  sales_tax_info_date 
+WHERE Taxpayer_City = 'HOUSTON';
+SELECT COUNT(*) FROM  franchise_tax_info 
+WHERE Taxpayer_City = 'HOUSTON';
+SELECT COUNT(*) FROM  sales_tax_info 
+WHERE Taxpayer_City = 'HOUSTON';
+
+-- -----------------------------------------------------
+-- Remove Trailing spaces
+-- -----------------------------------------------------
+-------------- franchise_tax_info_date
+-- UPDATE franchise_tax_info_date SET Taxpayer_Name = TRIM(Taxpayer_Name);
+-- UPDATE franchise_tax_info_date SET Taxpayer_Address = TRIM(Taxpayer_Address);
+-- UPDATE franchise_tax_info_date SET Taxpayer_City = TRIM(Taxpayer_City);
+-- UPDATE franchise_tax_info_date SET Secretary_of_State_File_Number = TRIM(Secretary_of_State_File_Number);
+-- UPDATE franchise_tax_info_date SET SOS_Charter_Date = TRIM(SOS_Charter_Date);
+-- UPDATE franchise_tax_info_date SET Current_Exempt_Reason_Code = TRIM(Current_Exempt_Reason_Code);
+-- UPDATE franchise_tax_info_date SET Agent_Name = TRIM(Agent_Name);
+-- UPDATE franchise_tax_info_date SET Agent_Address = TRIM(Agent_Address);
+-- UPDATE franchise_tax_info_date SET Agent_City = TRIM(Agent_City);
+-- UPDATE franchise_tax_info_date SET Agent_State = TRIM(Agent_State);
+-- UPDATE franchise_tax_info_date SET Agent_Zip_Code = TRIM(Agent_Zip_Code);
+-- UPDATE franchise_tax_info_date SET SOS_Status_Date = TRIM(SOS_Status_Date);
+ 
+-------------- sales_tax_info_date
+-- UPDATE sales_tax_info_date SET Taxpayer_Name = TRIM(Taxpayer_Name);
+-- UPDATE sales_tax_info_date SET Taxpayer_Address = TRIM(Taxpayer_Address);
+-- UPDATE sales_tax_info_date SET Taxpayer_City = TRIM(Taxpayer_City);
+-- UPDATE sales_tax_info_date SET Outlet_Name = TRIM(Outlet_Name);
+-- UPDATE sales_tax_info_date SET Outlet_Address = TRIM(Outlet_Address);
+-- UPDATE sales_tax_info_date SET Outlet_City = TRIM(Outlet_City);
 
 -- -----------------------------------------------------
 -- Table ccim
@@ -163,38 +210,63 @@ CREATE TABLE IF NOT EXISTS sales_tax_info (
 -- Table sales_tax_info_date
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS sales_tax_info_date (
-  `Agent_Address` VARCHAR(100) NULL DEFAULT NULL,
-  `Agent_City` VARCHAR(100) NULL DEFAULT NULL,
-  `Agent_Name` VARCHAR(100) NULL DEFAULT NULL,
-  `Agent_State` VARCHAR(100) NULL DEFAULT NULL,
-  `Agent_Zip_Code` VARCHAR(100) NULL DEFAULT NULL,
-  `Current_Exempt_Reason_Code` VARCHAR(100) NULL DEFAULT NULL,
-  `First_Sale_Date` FLOAT NULL DEFAULT NULL,
-  `Outlet_Address` VARCHAR(100) NULL DEFAULT NULL,
-  `Outlet_City` VARCHAR(100) NULL DEFAULT NULL,
-  `Outlet_County_Code` VARCHAR(100) NULL DEFAULT NULL,
-  `Outlet_NAICS_Code` VARCHAR(100) NULL DEFAULT NULL,
-  `Outlet_Name` VARCHAR(100) NULL DEFAULT NULL,
-  `Outlet_Number` VARCHAR(100) NULL DEFAULT NULL,
-  `Outlet_Phone_Number` VARCHAR(100) NULL DEFAULT NULL,
-  `Outlet_State` VARCHAR(100) NULL DEFAULT NULL,
-  `Outlet_Zip_Code` VARCHAR(100) NULL DEFAULT NULL,
-  `Permit_Issue_Date` FLOAT NULL DEFAULT NULL,
-  `Permit_Type` VARCHAR(100) NULL DEFAULT NULL,
-  `Record_Type_Code` VARCHAR(100) NULL DEFAULT NULL,
-  `Responsibility_Beginning_Date` FLOAT NULL DEFAULT NULL,
-  `SOS_Charter_Date` VARCHAR(100) NULL DEFAULT NULL,
-  `SOS_Status_Date` VARCHAR(100) NULL DEFAULT NULL,
-  `Secretary_of_State_File_Number` VARCHAR(100) NULL DEFAULT NULL,
-  `Tax_Code` FLOAT NULL DEFAULT NULL,
-  `Taxpayer_Address` VARCHAR(100) NULL DEFAULT NULL,
-  `Taxpayer_City` VARCHAR(100) NULL DEFAULT NULL,
-  `Taxpayer_County_Code` BIGINT NULL DEFAULT NULL,
-  `Taxpayer_Name` VARCHAR(100) NULL DEFAULT NULL,
-  `Taxpayer_Number` BIGINT NULL DEFAULT NULL,
-  `Taxpayer_Organizational_Type` VARCHAR(100) NULL DEFAULT NULL,
-  `Taxpayer_Phone_Number` VARCHAR(100) NULL DEFAULT NULL,
-  `Taxpayer_State` VARCHAR(100) NULL DEFAULT NULL,
-  `Taxpayer_Zip_Code` VARCHAR(100) NULL DEFAULT NULL,
-  `Taxpayer_Organizational_Name` VARCHAR(100) NULL DEFAULT NULL, -- added new column
-  `DateTime` VARCHAR(100) NULL DEFAULT NULL);
+`Taxpayer_Number` BIGINT NULL DEFAULT NULL,
+`Outlet_Number` VARCHAR(100) NULL DEFAULT NULL,
+`Taxpayer_Name` VARCHAR(100) NULL DEFAULT NULL,
+`Taxpayer_Address` VARCHAR(100) NULL DEFAULT NULL,
+`Taxpayer_City` VARCHAR(100) NULL DEFAULT NULL,
+`Taxpayer_State` VARCHAR(100) NULL DEFAULT NULL,
+`Taxpayer_Zip_Code` VARCHAR(100) NULL DEFAULT NULL,
+`Taxpayer_County_Code`INT NULL DEFAULT NULL,
+`Taxpayer_Phone_Number` VARCHAR(100) NULL DEFAULT NULL,
+`Outlet_Name` VARCHAR(100) NULL DEFAULT NULL,
+`Outlet_Address` VARCHAR(100) NULL DEFAULT NULL,
+`Outlet_City` VARCHAR(100) NULL DEFAULT NULL,
+`Outlet_State` VARCHAR(100) NULL DEFAULT NULL,
+`Outlet_Zip_Code` VARCHAR(100) NULL DEFAULT NULL,
+`Outlet_County_Code` VARCHAR(100) NULL DEFAULT NULL,
+`Outlet_Phone_Number` VARCHAR(100) NULL DEFAULT NULL,
+`Permit_Type` VARCHAR(100) NULL DEFAULT NULL,
+`Tax_Code` INT NULL DEFAULT NULL,
+`Outlet_NAICS_Code` VARCHAR(100) NULL DEFAULT NULL,
+`Permit_Issue_Date` VARCHAR(100) NULL DEFAULT NULL,
+`First_Sale_Date` VARCHAR(100) NULL DEFAULT NULL,
+`DateTime` VARCHAR(100) NULL DEFAULT NULL);
+
+
+-- CREATE TABLE IF NOT EXISTS sales_tax_info_date (
+--   `Agent_Address` VARCHAR(100) NULL DEFAULT NULL,
+--   `Agent_City` VARCHAR(100) NULL DEFAULT NULL,
+--   `Agent_Name` VARCHAR(100) NULL DEFAULT NULL,
+--   `Agent_State` VARCHAR(100) NULL DEFAULT NULL,
+--   `Agent_Zip_Code` VARCHAR(100) NULL DEFAULT NULL,
+--   `Current_Exempt_Reason_Code` VARCHAR(100) NULL DEFAULT NULL,
+--   `First_Sale_Date` FLOAT NULL DEFAULT NULL,
+--   `Outlet_Address` VARCHAR(100) NULL DEFAULT NULL,
+--   `Outlet_City` VARCHAR(100) NULL DEFAULT NULL,
+--   `Outlet_County_Code` VARCHAR(100) NULL DEFAULT NULL,
+--   `Outlet_NAICS_Code` VARCHAR(100) NULL DEFAULT NULL,
+--   `Outlet_Name` VARCHAR(100) NULL DEFAULT NULL,
+--   `Outlet_Number` VARCHAR(100) NULL DEFAULT NULL,
+--   `Outlet_Phone_Number` VARCHAR(100) NULL DEFAULT NULL,
+--   `Outlet_State` VARCHAR(100) NULL DEFAULT NULL,
+--   `Outlet_Zip_Code` VARCHAR(100) NULL DEFAULT NULL,
+--   `Permit_Issue_Date` FLOAT NULL DEFAULT NULL,
+--   `Permit_Type` VARCHAR(100) NULL DEFAULT NULL,
+--   `Record_Type_Code` VARCHAR(100) NULL DEFAULT NULL,
+--   `Responsibility_Beginning_Date` FLOAT NULL DEFAULT NULL,
+--   `SOS_Charter_Date` VARCHAR(100) NULL DEFAULT NULL,
+--   `SOS_Status_Date` VARCHAR(100) NULL DEFAULT NULL,
+--   `Secretary_of_State_File_Number` VARCHAR(100) NULL DEFAULT NULL,
+--   `Tax_Code` FLOAT NULL DEFAULT NULL,
+--   `Taxpayer_Address` VARCHAR(100) NULL DEFAULT NULL,
+--   `Taxpayer_City` VARCHAR(100) NULL DEFAULT NULL,
+--   `Taxpayer_County_Code` BIGINT NULL DEFAULT NULL,
+--   `Taxpayer_Name` VARCHAR(100) NULL DEFAULT NULL,
+--   `Taxpayer_Number` BIGINT NULL DEFAULT NULL,
+--   `Taxpayer_Organizational_Type` VARCHAR(100) NULL DEFAULT NULL,
+--   `Taxpayer_Phone_Number` VARCHAR(100) NULL DEFAULT NULL,
+--   `Taxpayer_State` VARCHAR(100) NULL DEFAULT NULL,
+--   `Taxpayer_Zip_Code` VARCHAR(100) NULL DEFAULT NULL,
+--   `Taxpayer_Organizational_Name` VARCHAR(100) NULL DEFAULT NULL, -- added new column
+--   `DateTime` VARCHAR(100) NULL DEFAULT NULL);
