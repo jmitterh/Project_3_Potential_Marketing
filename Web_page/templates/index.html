@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Home Page</title>
+  <title>Food and Beverage Comparison</title>
   <!-- Latest compiled and minified CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -18,8 +18,9 @@
   <div class="container">
 
     <div class="row">
+
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url_for('home') }}">Home </a>
+        <a class="navbar-brand" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -27,24 +28,26 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="{{ url_for('indexTwo') }}">Tab 1 <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('comparison') }}">Comparison</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                Dropdown:
+                API Links:
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{{ url_for('home') }}">Home</a>
-                <a class="dropdown-item" href="{{ url_for('indexTwo') }}">Tab 1</a>
+                <a class="dropdown-item" href="{{ url_for('comparison') }}">Comparison</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-header">Dropdown</a>
-                <a class="dropdown-item" href="{{ url_for('indexTwo') }}" target="_blank">List 1</a>
-                <a class="dropdown-item" href="{{ url_for('indexTwo') }}" target="_blank">List 2</a>
-                <a class="dropdown-item" href="{{ url_for('indexTwo') }}" target="_blank">List 3</a>
-                <a class="dropdown-item" href="{{ url_for('indexTwo') }}" target="_blank">List 4</a>
-                <a class="dropdown-item" href="{{ url_for('indexTwo') }}" target="_blank">List 5</a>
+                <a class="dropdown-header">API Links:</a>
+                <a class="dropdown-item" href="{{ url_for('nutrientvalue') }}" target="_blank">Food Name Description/a>
+                <a class="dropdown-item" href="{{ url_for('portionsandweights') }}" target="_blank">Portions
+                  and Weights</a>
+                <a class="dropdown-item" href="{{ url_for('descriptioncategory') }}" target="_blank">Description
+                  Category</a>
+                <a class="dropdown-item" href="{{ url_for('category') }}" target="_blank">Category</a>
+                <a class="dropdown-item" href="{{ url_for('dailyvalue') }}" target="_blank">% Daily Value</a>
               </div>
             </li>
           </ul>
@@ -56,9 +59,9 @@
     <div class="row">
 
       <div class="col-md-12 jumbotron text-center">
-        <h1 id="head">Home Page</h1>
+        <h1 id="head">Food and Beverage Dashboard</h1>
         <hr>
-        <p>Template</p>
+        <p>Use the interactive charts below to explore the dataset</p>
       </div>
 
     </div>
@@ -68,8 +71,8 @@
       <div class="col-md-3">
 
         <div class="card card-body bg-light">
-          <p>Card 1</p>
-    
+          <h5>Select food:</h5>
+          <select id="selDataset" onchange="optionFoodChanged(this.value)"></select>
         </div>
 
       </div>
@@ -77,8 +80,9 @@
       <div class="col-md-3">
 
         <div class="card card-body bg-light">
-          <p>Card 2</p>
-
+          <h5>Select quantity:</h5>
+          <select id="selDatasetone"
+            onchange="optionWeightChanged(this.value.split(',')[0],this.value.split(',')[1])"></select>
         </div>
 
       </div>
@@ -86,8 +90,11 @@
       <div class="col-md-6">
 
         <div class="card border-success mb-3">
-          <p>Card with green border using bootstrap</p>
+          <div id="name" class="card-body">
+          </div>
         </div>
+
+        <div id="name"></div>
 
       </div>
 
@@ -99,7 +106,7 @@
 
         <div class="card text-center scroll">
 
-          <div class="card-header">Card Header</div>
+          <div class="card-header">Nutrition Info</div>
           <div id="nutrient-panel" class="list-group list-group-flush"></div>
 
         </div>
@@ -108,7 +115,8 @@
 
       <div class="col-md-6">
 
-        <p>Column</p>
+        <!-- Gauge for Daily Value-->
+        <div id="gauge"></div>
 
       </div>
 
@@ -118,13 +126,15 @@
 
       <div class="col-md-6">
 
-        <p>Column</p>
+        <!-- Bar Graph Macro Nutrients -->
+        <div id="bar-macro"></div>
 
       </div>
 
       <div class="col-md-6">
 
-        <p>Column</p>
+        <!-- Bar Graph Micro Nutrients -->
+        <div id="bar-micro"></div>
 
       </div>
 
@@ -133,14 +143,14 @@
     <div class="row">
 
       <div class="col-md-6">
-
-        <p>Column</p>
+        <!-- Radar chart Plot -->
+        <canvas id="marco-radar" width="200" height="200"></canvas>
 
       </div>
 
       <div class="col-md-6">
-
-        <p>Column</p>
+        <!-- Radar chart Plot -->
+        <canvas id="micro-radar" width="200" height="200"></canvas>
 
       </div>
 
@@ -152,7 +162,8 @@
       <div class="col-md-5">
 
         <div class="card card-body bg-light">
-          <p>Card</p>
+          <h5>Select Grouped food category:</h5>
+          <select id="selDatasettwo" onchange="optionScatterChanged(this.value)"></select>
         </div>
 
       </div>
@@ -166,7 +177,9 @@
     <div class="row">
 
       <div class="col-md-12-fluid">
-        <!-- Empty column -->
+        <!-- Scatter Plot -->
+        <div id="scatter"></div>
+
       </div>
 
     </div>

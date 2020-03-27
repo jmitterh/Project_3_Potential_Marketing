@@ -5,12 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Home Page</title>
+  <title>Marketing</title>
   <!-- Latest compiled and minified CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!-- Local stylesheet -->
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mystyle.css') }}">
+  <!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mystyle.css') }}">-->
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
@@ -18,8 +19,9 @@
   <div class="container">
 
     <div class="row">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url_for('home') }}">Home </a>
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+        <a class="navbar-brand" href="model-1.html">Home </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -28,23 +30,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{{ url_for('indexTwo') }}">Tab 1 <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="predictions.html">Model Predictions<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                Dropdown:
+                Visuals & Analysis:
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ url_for('home') }}">Home</a>
-                <a class="dropdown-item" href="{{ url_for('indexTwo') }}">Tab 1</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-header">Dropdown</a>
-                <a class="dropdown-item" href="{{ url_for('indexTwo') }}" target="_blank">List 1</a>
-                <a class="dropdown-item" href="{{ url_for('indexTwo') }}" target="_blank">List 2</a>
-                <a class="dropdown-item" href="{{ url_for('indexTwo') }}" target="_blank">List 3</a>
-                <a class="dropdown-item" href="{{ url_for('indexTwo') }}" target="_blank">List 4</a>
-                <a class="dropdown-item" href="{{ url_for('indexTwo') }}" target="_blank">List 5</a>
+                <a class="dropdown-item" href="plotly.html" target="_blank">Plotly Visual</a>
+                <a class="dropdown-item" href="d3.html" target="_blank">D3 Visual</a>
+                <a class="dropdown-item" href="Leaflet_tableau.html" target="_blank">Leaflet or Tableau Visual</a>
               </div>
             </li>
           </ul>
@@ -56,123 +52,61 @@
     <div class="row">
 
       <div class="col-md-12 jumbotron text-center">
-        <h1 id="head">Home Page</h1>
+        <h1 id="head">Real Estate - TaxPayer Analysis</h1>
         <hr>
-        <p>Template</p>
+        <p><h3>Houston,TX</h3></p>
       </div>
 
     </div>
 
-    <div class="row">
+   <!--Intro Paragraph-->
 
-      <div class="col-md-3">
+   <div class="row">
+    <div class="col-md-12" id="intro">
 
-        <div class="card card-body bg-light">
-          <p>Card 1</p>
+      <!-- Empty column -->
+      <!--<div class="card card-body bg-light">-->
+      <div class="card">
+        <div class="card-header"><h2>Franchise Tax: </h2></div>
+        <div class="card-body">
+          <p>
+            In the state of Texas, franchise tax is considered to be a "privilege" tax, which is a tax that is imposed on companies chartered in Texas or doing business in Texas. 
+            It is typically based on a company's net worth, rather than on annual taxable income. <br>
+            Any “legal entity” that does business in Texas or that is chartered in Texas must pay a franchise tax. This includes: <br>
+            - corporations <br>
+            - limited liability companies (LLCs) <br>
+            - banks and savings and loan associations <br>
+            - partnerships (general, limited and limited liability)<br>
+            - trusts <br>
+            - professional and business associations <br>
+            - joint ventures <br>
+            - other entities doing business in Texas <br>
+          </p> 
+        </div> 
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-----------intro para ----------->
+
+  <!----------- Footer ----------->
+
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <div class="card" id="footer">
+        <div class="card-footer">
+          <p><h3>Refernce Link(s):</h3> 
+            <a href="https://comptroller.texas.gov/" target="_blank">https://comptroller.texas.gov/</a>
+         </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <!----------- Footer ----------->
     
-        </div>
-
-      </div>
-
-      <div class="col-md-3">
-
-        <div class="card card-body bg-light">
-          <p>Card 2</p>
-
-        </div>
-
-      </div>
-
-      <div class="col-md-6">
-
-        <div class="card border-success mb-3">
-          <p>Card with green border using bootstrap</p>
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="row">
-
-      <div class="col-md-6">
-
-        <div class="card text-center scroll">
-
-          <div class="card-header">Card Header</div>
-          <div id="nutrient-panel" class="list-group list-group-flush"></div>
-
-        </div>
-
-      </div>
-
-      <div class="col-md-6">
-
-        <p>Column</p>
-
-      </div>
-
-    </div>
-
-    <div class="row">
-
-      <div class="col-md-6">
-
-        <p>Column</p>
-
-      </div>
-
-      <div class="col-md-6">
-
-        <p>Column</p>
-
-      </div>
-
-    </div>
-
-    <div class="row">
-
-      <div class="col-md-6">
-
-        <p>Column</p>
-
-      </div>
-
-      <div class="col-md-6">
-
-        <p>Column</p>
-
-      </div>
-
-    </div>
-
-
-    <div class="row">
-
-      <div class="col-md-5">
-
-        <div class="card card-body bg-light">
-          <p>Card</p>
-        </div>
-
-      </div>
-
-      <div class="col-md-7">
-        <!-- Empty column -->
-      </div>
-
-    </div>
-
-    <div class="row">
-
-      <div class="col-md-12-fluid">
-        <!-- Empty column -->
-      </div>
-
-    </div>
-
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -193,11 +127,7 @@
       crossorigin="anonymous"></script>
 
 
-</body>
 </div>
-
-
-
 
 
 </body>
