@@ -34,9 +34,15 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
-@app.route("/indexTwo")
-def indexTwo():
-    return render_template("indexTwo.html")
+@app.route("/visuals")
+def visuals():
+    return render_template("visuals.html")
+
+@app.route("/predictions")
+def predictions():
+    return render_template("predictions.html")    
+
+
 
 
 if __name__ == '__main__':
