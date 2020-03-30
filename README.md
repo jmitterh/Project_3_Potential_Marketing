@@ -77,8 +77,8 @@ pip install -r requirements.txt
     * Hotel Tax Receipts: Franchise Tax Permit
 
 
-* [***Harris County Appraisal District - HCAD***](https://hcad.org/)
-is a political subdivision of the State of Texas established in 1980 for the purpose of discovering and appraising property for ad valorem tax purposes for each taxing unit within the boundaries of the district.
+* [***Harris County Appraisal District***](https://hcad.org/)
+ HCAD - is a political subdivision of the State of Texas established in 1980 for the purpose of discovering and appraising property for ad valorem tax purposes for each taxing unit within the boundaries of the district.
 
 
 ## Type of ML Analysis
