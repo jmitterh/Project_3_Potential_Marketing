@@ -13,13 +13,14 @@
   <!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mystyle.css') }}">-->
   <link rel="stylesheet" href="{{ url_for('static', filename='mystyle.css') }}">
 </head>
+
 <body>
 
   <div class="container">
 
     <div class="row">
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="{{ url_for('home') }}">Home </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,10 +30,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{{ url_for('visuals') }}">Visuals & Analysis<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{ url_for('visuals') }}">Visuals & Analysis<span
+                  class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="{{ url_for('predictions') }}"">Model Predictions<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{ url_for('predictions') }}"">Model Predictions<span class="
+                sr-only">(current)</span></a>
             </li>
           </ul>
         </div>
@@ -40,23 +43,181 @@
 
     </div>
 
+    <!-- Table -->
+    <div class="row">
 
- <!-- Footer -->
- <footer class="page-footer font-small blue fixed-bottom">
-  <div class="footer-copyright" id="footer">
-      <div class="container">
+      <div class="col-md-12">
+
+        <div class='tableauPlaceholder' id='viz1585614639866' style='position: relative'><noscript><a href='#'><img
+                alt=' '
+                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fo&#47;ForcastTable&#47;forcasttable&#47;1_rss.png'
+                style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='ForcastTable&#47;forcasttable' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image'
+              value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fo&#47;ForcastTable&#47;forcasttable&#47;1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='filter' value='publish=yes' /></object>
+        </div>
+
+        <script type='text/javascript'>
+          var divElement = document.getElementById('viz1585614639866');
+          var vizElement = divElement.getElementsByTagName('object')[0];
+          vizElement.style.width = '100%';
+          vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+          var scriptElement = document.createElement('script');
+          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+          vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+        </script>
+
+      </div>
+
+    </div>
+
+    <!-- Graph -->
+    <div class="row">
+
+
+      <div class="col-md-12">
+
+        <div class='tableauPlaceholder' id='viz1585617192355' style='position: relative'><noscript><a href='#'><img
+                alt=' '
+                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fo&#47;ForcastTable&#47;forcastchart&#47;1_rss.png'
+                style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='ForcastTable&#47;forcastchart' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image'
+              value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fo&#47;ForcastTable&#47;forcastchart&#47;1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='filter' value='publish=yes' /></object>
+        </div>
+
+        <script type='text/javascript'>
+          var divElement = document.getElementById('viz1585617192355');
+          var vizElement = divElement.getElementsByTagName('object')[0];
+          vizElement.style.width = '100%';
+          vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+          var scriptElement = document.createElement('script');
+          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+          vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+        </script>
+
+
+      </div>
+      <!-- end of column -->
+    </div>
+
+    <!-- Tableau Commercial Building map -->
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class='tableauPlaceholder' id='viz1585617809541' style='position: relative'><noscript><a href='#'><img
+                alt=' '
+                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CommercialBuildings&#47;commercialbuilding&#47;1_rss.png'
+                style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='CommercialBuildings&#47;commercialbuilding' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image'
+              value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CommercialBuildings&#47;commercialbuilding&#47;1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='filter' value='publish=yes' /></object>
+        </div>
+
+        <script type='text/javascript'>
+          var divElement = document.getElementById('viz1585617809541'); 
+          var vizElement = divElement.getElementsByTagName('object')[0]; 
+          vizElement.style.width = '100%'; 
+          vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; 
+          var scriptElement = document.createElement('script'); 
+          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; 
+          vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+          </script>
+
+      </div>
+    </div>
+
+
+
+    <!-- Tableau zipcode map -->
+    <div class="row">
+      <div class="col-md-12">
+
+        <div class='tableauPlaceholder' id='viz1585613819357' style='position: relative'><noscript><a href='#'><img
+                alt=' '
+                src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fo&#47;ForcastMap_15856123589720&#47;forcastmap&#47;1_rss.png'
+                style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='ForcastMap_15856123589720&#47;forcastmap' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image'
+              value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fo&#47;ForcastMap_15856123589720&#47;forcastmap&#47;1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='filter' value='publish=yes' /></object>
+        </div>
+
+        <script type='text/javascript'>
+          var divElement = document.getElementById('viz1585613819357');
+          var vizElement = divElement.getElementsByTagName('object')[0];
+          vizElement.style.width = '100%';
+          vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+          var scriptElement = document.createElement('script');
+          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+          vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+      </div>
+
+    </div>
+    <!-- End map -->
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue fixed-bottom">
+      <div class="footer-copyright" id="footer">
+        <div class="container">
           <div class="row">
             <div class="col-md-12 text-center">
-              <p><h3>Refernce Links:</h3> 
-                <a href="https://comptroller.texas.gov/" target="_blank">Comptroller Public Accounts</a>
+              <p>
+                <h3>Source Links:</h3>
+                <a href="https://comptroller.texas.gov/" target="_blank">Comptroller Public Accounts</a><br>
                 <a href="https://hcad.org/" target="_blank">Harris County Appraisal District</a>
-             </p>
+              </p>
             </div>
-          </div>  
-      </div>            
-  </div>
-</footer>
-<!-- Footer -->
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -76,9 +237,9 @@
       crossorigin="anonymous"></script>
 
 
-</div>
+  </div>
 
-    
+
 </body>
 
 </html>
