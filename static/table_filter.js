@@ -28,7 +28,7 @@ function change_options()
 
     d3.select("#org_details").select("tbody").selectAll("tr").remove()
 
-    d3.csv("HOUfran_old.csv").then(function(csv_data)
+    d3.csv("/static/jsData/HOUfran.csv").then(function(csv_data)
     {
         csv_data.map(i => {
 
@@ -47,9 +47,9 @@ function change_options()
 
 // reading csv files
 
-d3.csv("HOUfran_old.csv").then(function(csv_data)
+d3.csv("/static/jsData/HOUfran.csv").then(function(csv_data)
 {
-    //console.log(csv_data[0].Taxpayer_Zip_Code)
+    console.log("checking data:",csv_data[0].Taxpayer_Zip_Code)
     const first_zipcode = csv_data[0].Taxpayer_Zip_Code
 
     //var row = tbody.append("tr")

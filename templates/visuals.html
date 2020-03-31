@@ -108,7 +108,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="{{ url_for('static', filename='appOne.js') }}"></script>
     <!-- Chart.js Resource Reference -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
@@ -131,15 +130,14 @@
 
 
 
-  <!--d3.js-->
-
+      <!--d3.js-->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
      <script src="https://d3js.org/d3-array.v1.min.js"></script>
      <script src="https://d3js.org/d3-geo.v1.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/d3-require@1"></script>
      <script src="https://d3js.org/d3.v5.min.js"></script>
 
-     <script src="table_filter.js"></script>
+     <script src="{{ url_for('static',filename='table_filter.js') }}"></script>
 
 
 <script>
