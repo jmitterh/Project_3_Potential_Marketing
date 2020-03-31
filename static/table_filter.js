@@ -25,7 +25,7 @@ var tbody = table_tag.append("tbody").classed("table_row",true)
 
     // reading csv files and to fill select menu
 
-d3.csv("/static/jsData/HOUfran.csv").then(function(csv_data)
+d3.csv("/static/jsData/df_fran_sorted_by_zip.csv").then(function(csv_data)
 {
     console.log("checking data:",csv_data[0].Taxpayer_Zip_Code)
     const first_zipcode = csv_data[0].Taxpayer_Zip_Code 
@@ -75,7 +75,7 @@ function change_options()
 
     d3.select("#org_details").select("tbody").selectAll("tr").remove() // removing the existing zipcode table to change for selected zip code table
 
-    d3.csv("/static/jsData/HOUfran.csv").then(function(csv_data)
+    d3.csv("/static/jsData/df_fran_sorted_by_zip.csv").then(function(csv_data)
     {
         csv_data.map(i => {
 
