@@ -1,4 +1,0 @@
-## change this .txt file to a .py file to run the following on your local machine
-mysql_user = 'root'
-mysql_password = 'Dhanista#4'
-db_name = 'bot_cre_marketing'

@@ -15,3 +15,70 @@
     height: 100%;
     background-image: url(img/rosybrown.PNG)
 };
+
+.d3
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+#org_details /* for table scrolling*/
+{
+    position: relative;
+    height: 430px;
+    overflow: auto;
+    width: 100%;
+    display: block;
+}
+
+#org_details thead > tr > th /* styling for table header */
+   
+{
+    background-color: rosybrown;  
+    border-color:rosybrown;
+    position: sticky;  /* for fixed table header while scrolling */
+    top: 0; /* for fixed table header while scrolling */
+}
+
+#org_details tbody > tr:hover
+{
+  background-color: rosybrown; /*table rows hover color*/
+}
+
+  
+
+
+/*
+
+.org_details thead > tr> th{
+    /*
+    visibility: hidden;
+    clear: both;
+    position: sticky;
+    top: 0;
+    border-bottom-width: 0; 
+    float: left;
+    
+}
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 430px;
+    overflow: auto;
+    width: 100%;
+    display: block;
+    }
+
+
+*/
+
+
+
+
+
+  
