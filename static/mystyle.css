@@ -47,6 +47,7 @@
 }
 
 
+<<<<<<< HEAD
  /* Style the Image Used to Trigger the Modal */
  .myImg {
     border-radius: 5px;
@@ -119,6 +120,44 @@
     font-weight: bold;
     transition: 0.3s;
 }
+=======
+/* drop traols*/
+
+#myInput {
+    box-sizing: border-box;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  
+  
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+>>>>>>> dd2b0d4076b79420c0d43aea9e465f0824d46cc4
 
 .close:hover,
 .close:focus {

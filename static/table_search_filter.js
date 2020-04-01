@@ -1,5 +1,6 @@
 // variables that refernce tags 
-var select_zip = d3.selectAll("#zipcode").on("change",change_options)
+//var select_zip = d3.selectAll("#zipcode").on("change",change_options)
+var select_zip = d3.select("#myDropdown")
 
 var table_tag = d3.select("#org_details")
 var columns = ["Taxpayer_Number","Taxpayer_Name","Taxpayer_address","Taxpayer_Organizational_Name","Responsibility_Beginning_Date","SOS_Charter_Date"]
@@ -22,10 +23,34 @@ var tbody = table_tag.append("tbody").classed("table_row",true)
         return column
         })
 
+        //<option><a href="#">home</a></option>
+        //<option><a href="#">contact</a></option>
+
+       // var add_zipcode = select_zip.append("a").attr("href","#").text("home")
+       // var add_zipcode = select_zip.append("a").attr("href","#").text("about")
+
+       
+d3.csv("/static/jsData/df_fran_sorted_by_zip.csv").then(function(csv_data)
+{
+   // const first_zipcode = csv_data[0].Taxpayer_Zip_Code
+    csv_data.map(i => {
+        if(!(select_zip.text()).includes(i.Taxpayer_Zip_Code))
+        {
+            //console.log(i.Taxpayer_Zip_Code)
+            //var select_option = select_zip.append("option")
+            //var add_zipcode = select_option.append("a").attr("href","#").text(i.Taxpayer_Zip_Code)
+
+            var add_zipcode = select_zip.append("a").attr("href","#").text(i.Taxpayer_Zip_Code).on("click",change_option())
+            //fill_table(i) 
+        }
+    })
+});
+
+
 
     // reading csv files and to fill select menu
 
-d3.csv("/static/jsData/df_fran_sorted_by_zip.csv").then(function(csv_data)
+/*d3.csv("/static/jsData/df_fran_sorted_by_zip.csv").then(function(csv_data)
 {
     console.log("checking data:",csv_data[0].Taxpayer_Zip_Code)
     const first_zipcode = csv_data[0].Taxpayer_Zip_Code 
@@ -59,13 +84,13 @@ d3.csv("/static/jsData/df_fran_sorted_by_zip.csv").then(function(csv_data)
            
         }
     })
-});
+});*/
 
 
 
   }
 
-
+/*
 
 function change_options()
 {
@@ -109,12 +134,32 @@ function fill_table(i)
     }
 
 }
-
+*/
 
 intial_page_load()
 
 
 
+
+/*
+
+
+function myFunction()
+{
+    //var select_zipcode = d3.select("#myDropdown")
+
+    //console.log(select_zipcode.text())
+
+    console.log(select_zip)
+
+
+} 
+*/
+
+function change_option()
+{
+    console.log(select_zip.text())
+}
 
 
 
