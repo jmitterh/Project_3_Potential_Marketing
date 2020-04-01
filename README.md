@@ -21,7 +21,7 @@ A Dashboard of the potential tenants for Commercial Real-Estate Companies can ta
 * MatPlotLib
 * D3 javascript
 * Tableau
-* Machine Learning
+* Machine Learning - SARIMAX Model
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the following:
@@ -33,30 +33,54 @@ pip install -r requirements.txt
 ## Folder And File Description
 
 #### Repository folders and main file descrption:
-1. CRE_Marketing_Data/
-    * database/
+1. [arima_ml_models/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/arima_ml_models)
+    * [images/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/arima_ml_models/images)
+        * [historical_output/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/arima_ml_models/images/historical_output)
+            * *Png outputs of the machine learning process*
+        * [seasonal_output/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/arima_ml_models/images/seasonal_output)
+            * *png outputs of the machine learning process*
+    * [model/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/arima_ml_models/models)
+        * [auto_model/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/arima_ml_models/models/auto_model)
+            * csv files - *Are each zipcode csv file after running the machine learning algorithm (10 zipcodes from Baoxing)*
+            * .ipynb - *This is the Model used in our project. Ten year monthly number of companies in the time span*
+        * [historical model/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/arima_ml_models/models/historical_model)
+            * ARIMA_model.ipyinb - *Auto model template, generate the most optimal model*
+    * [Resources/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/arima_ml_models/Resources)
+        * csv files  - *That contain the zipcode data for machine learning models*
+2. [CRE_Marketing_Data/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/CRE_Marketing_Data)
+    * [database/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/CRE_Marketing_Data/database)
         * marketing_schema.sql - *Script to run for the creation of our mysql database*
-    * HotelOccupancyTaxData/*
-        * formattedData/*
-            * formatted Data Files - *stored in csv, files were too large to store in github*
-        * Data Files - *stored in csv, these are the raw files shared in googledrive due to their large size*
-    * BuildingData.ipynb - *hcad data munging to only have commercial building information*
+    * [HotelOccupancyTaxData/*](https://drive.google.com/drive/folders/1KxHymw6Mu5s5kwpUOvlGX1K-E2O_GOQQ?usp=sharing)
+        * Raw Data Files - *Text and csv files of our sources data and raw data in csv form. This data was also stored in our MySQL database*
+        * [formattedData/](https://drive.google.com/drive/folders/1KxHymw6Mu5s5kwpUOvlGX1K-E2O_GOQQ?usp=sharing)
+            * formatted Data Files - *stored as csv, files were too large to store in github*
+    * BuildingData.ipynb - *Hcad data munging to only have commercial building information*
     * CreatingDirectoryDescription.txt - *Instruction on creating folders to store data from the sources mentioned in this document*
-    * db_setup.txt - *credentials used to connect to our Database. Change .txt to .py*
+    * db_setup.txt - *Credentials used to connect to our Database. Change .txt to .py*
     * HotelTaxPayerData.ipynb - *Pulling our main source of companies filing for franchise tax permits from the comptroller website. This information is captured and added to the database*
     * HoustonData.ipynb - *Pulling our main source of data from our databse and munging it to provide only houston information with non-repeating values*
-2. static/
-    * img/ - *Folder to store any images used in our flask app html pages*
+3. [static/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/static)
+    * [img/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/static/img)
+        * rosybrown.png - *Color for our app pages*
+    * [jsData/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/static/jsData)
+        * HOUfran.csv - *List of current new companies. This data is from November 2019 through March 2020*
+    * [model_process/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/static/model_process)
+        * [historical_output/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/static/model_process/historical_output)
+            * png files - *Output of our historical machine learning process. This is displayed on the home/index page*
+        * [seasonal_output/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/static/model_process/seasonal_output)
+            * png files - *Output of our seasonal machine learning process. This is displayed on the home/index page*
+    * modalPickPopUp.js - *Javascript funcationality of the thumbnail pop for the home/index page*
     * mystyle.css - *styles page of our html pages*
-3. templates/
-    * index.html - *Main page of our flask app*
+    * table_filter.js - *Javascript functionality for the viusal.html*
+4. [templates/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/templates)
+    * index.html - *Main page of our flask app. Description of the processes we used for our machine learning, and page output description*
     * prediction.html - *Page of our process of creating our ML*
     * visual.html - *Our data visually displayed page*
-4. .gitignore - *files/folders to ignore from being pushed into the repository. Files such as vscode, pycache, and ipynb checkpoints. Also ignored the folders that stored the large csv files of our data.*
-5. app.py - *Flask app initiation*
-6. LICENSE - *MIT license description*
-7. README.md - *This readme file*
-8. requirments.txt *pip install dependencies for this application*
+5. .gitignore - *Files/folders to ignore from being pushed into the repository. Files such as vscode, pycache, and ipynb checkpoints. Also ignored the folders that stored the large csv files of our data.*
+6. app.py - *Flask app initiation*
+7. LICENSE - *MIT license description*
+8. README.md - *This readme file that you are viewing*
+9. requirments.txt *Pip install dependencies for this application*
 
 *  *asterisk represents folders that were ignored to our repository, but were used for our project.
 
@@ -64,7 +88,7 @@ pip install -r requirements.txt
 
 #### Python Plotly and MYSQL
 ***Webpage:***
-* *Home Page:* Brief introduction of who we are and what we are trying to do with application.
+* *Home Page:* Brief introduction of who we are and what we are trying to do with the application.
 * *Predictions Page:* Visual description of what models we used for machine learning.
 * *Visuals Page:* Our displays providing context to our target audience. 
 
