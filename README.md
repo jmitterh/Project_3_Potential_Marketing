@@ -41,7 +41,7 @@ pip install -r requirements.txt
             * *png outputs of the machine learning process*
     * [model/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/arima_ml_models/models)
         * [auto_model/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/arima_ml_models/models/auto_model)
-            * csv files - *Are each zipcode csv file after running the machine learning algorithm (10 zipcodes from Baoxing)*
+            * csv files - *Are output of each zipcode csv file after running the machine learning algorithm*
             * .ipynb - *This is the Model used in our project. Ten year monthly number of companies in the time span*
         * [historical model/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/arima_ml_models/models/historical_model)
             * ARIMA_model.ipyinb - *Auto model template, generate the most optimal model*
