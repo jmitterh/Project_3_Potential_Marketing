@@ -46,61 +46,47 @@
 
       
      <section id ="d3">
-      <div class="container">
+       <div class="d3_box">
           <div class="row">
-              <div class="col-md-3">
+            <!--md-2-->
+              <div class="col-md-2">
                <div class="panel panel-default">
                    <div class="panel-body">
                     <!--<select id="zipcode" class="select_zipcode" style="margin-top: 30px"></select>-->
-                    <div class="row">
-                      <div class="dropdown">
-                        <button onclick="myFunction()" class="dropbtn">Select ZipCode:</button>
-                        <div id="myDropdown" class="dropdown-content">
-                          <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> 
-                          <!-- <select id="zipcode" class="select_zipcode" style="margin-top: 30px">
-                         
-                         
-                          </select> -->
-
+                    <div class="dropdown"> 
+                      <button onclick="myFunction()" class="dropbtn">Select ZipCode:</button>
+                      <div id="myDropdown" class="dropdown-content">
+                        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> 
+                             <!--drop down goes here-->
                         </div>
                       </div>
-                  
                     </div>
-                    <!--<select id="zipcode" class="select_zipcode"></select>-->
                    </div>
                </div>
-                  
-              </div>
-              <div class="col-md-9">
+            <!--md-2-->
+
+            <!--md-10-->
+              <div class="col-md-10">
                   <div class="panel panel-default">
                       <div id="personal_information" class="panel-body">
-                        <h2>Table data Search:</h2>
-                        <input class="form-control" id="searchinput" type="text" placeholder="Search..">
+                        <input class="form-control" id="searchinput" type="text" placeholder="Search Table for..">
                       </div>
                   </div>
+                  <div class="panel panel-default">
+                    <div class="table-responsive">
+                      <table class="table table-hover" id="org_details">
+                         
+                      </table>
+                    </div>
+                  </div>
               </div>
+            <!--md-10-->
           </div>
-   
-          <div class="row">
-            <div class="col-md-12">
-              <div class="panel panel-default">
-                <div class="table-responsive" >
-                  <table class="table table-hover" id="org_details">
-
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-
-      </div>
+        </div>
   </section>
 
   <!--d3 library-->
 
-  
-
- 
 
  <!-- Footer -->
  <footer class="page-footer font-small blue fixed-bottom">

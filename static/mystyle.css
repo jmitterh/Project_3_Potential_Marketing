@@ -16,12 +16,11 @@
     background-image: url(img/rosybrown.PNG)
 };
 
-.d3
+.d3_box
 {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
-
 
 #org_details /* for table scrolling*/
 {
@@ -47,7 +46,6 @@
 }
 
 
-<<<<<<< HEAD
  /* Style the Image Used to Trigger the Modal */
  .myImg {
     border-radius: 5px;
@@ -120,8 +118,28 @@
     font-weight: bold;
     transition: 0.3s;
 }
-=======
-/* drop traols*/
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+.panel
+{
+  border: black;
+}
+
+
+/* drop down styling*/
 
 #myInput {
     box-sizing: border-box;
@@ -154,24 +172,21 @@
     display: block;
   }
   
-  .dropdown a:hover {background-color: #ddd;}
+  .dropdown a:hover {background-color: rosybrown;}
   
   .show {display: block;}
->>>>>>> dd2b0d4076b79420c0d43aea9e465f0824d46cc4
 
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
+  .dropbtn
+  {
+    background-color: rosybrown;
+    border:none;
+  }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-    .modal-content {
-        width: 100%;
-    }
-}
+  /* drop down styling*/
+
+
+
+
   
 
 

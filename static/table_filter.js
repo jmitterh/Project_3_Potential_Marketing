@@ -1,7 +1,9 @@
 // variables that refernce tags 
-var select_zip = d3.selectAll("#zipcode").on("change",change_options)
 
+var select_zip = d3.select("#myDropdown")
 var table_tag = d3.select("#org_details")
+
+//adding thead, tbody and column values
 var columns = ["Taxpayer_Number","Taxpayer_Name","Taxpayer_address","Taxpayer_Organizational_Name","Responsibility_Beginning_Date","SOS_Charter_Date"]
 var thead = table_tag.append("thead")
 var tbody = table_tag.append("tbody").classed("table_row",true)
@@ -10,7 +12,7 @@ var tbody = table_tag.append("tbody").classed("table_row",true)
 
 // function to load data on page load/refresh
 
-  function intial_page_load()
+function intial_page_load()
   {
       // adding table columns 
 
@@ -22,76 +24,24 @@ var tbody = table_tag.append("tbody").classed("table_row",true)
         return column
         })
 
-
-    // reading csv files and to fill select menu
-
-d3.csv("/static/jsData/df_fran_sorted_by_zip.csv").then(function(csv_data)
-{
-    console.log("checking data:",csv_data[0].Taxpayer_Zip_Code)
-    const first_zipcode = csv_data[0].Taxpayer_Zip_Code 
-
-    csv_data.map(i => {
-
-        if (first_zipcode === i.Taxpayer_Zip_Code)
-        {
-          
-           var keys = Object.keys(i)
-           var values = Object.values(i)
-
-            if(!(select_zip.text()).includes(i.Taxpayer_Zip_Code)) // adding first zip code - unique value
-            {
-                var add_zipcode = select_zip.append("option").attr("value",i.Taxpayer_Zip_Code).text(i.Taxpayer_Zip_Code).attr("selected","selected")
-                    
-            }
+       
+    d3.csv("/static/jsData/df_fran_sorted_by_zip.csv").then(function(csv_data)
+    {
+      
+     // reading csv files and to fill dropdown menu
+       csv_data.map(i => {
+          if(!(select_zip.text()).includes(i.Taxpayer_Zip_Code))
+          {
+            var add_zipcode = select_zip.append("a").attr("onClick",`change_option(${i.Taxpayer_Zip_Code})`).text(i.Taxpayer_Zip_Code)
             
-            fill_table(i)
         }
-        else
-        {
-            if(!(select_zip.text()).includes(i.Taxpayer_Zip_Code)) // adding first zip code - unique value
-            {
-                var add_zipcode = select_zip.append("option").attr("value",i.Taxpayer_Zip_Code).text(i.Taxpayer_Zip_Code)
-                
-            }
-            
-            //fill_table(i)
-        
-           
-        }
-    })
-});
 
+        fill_table(i) 
+        })
+    });
 
 
   }
-
-
-
-function change_options()
-{
-
-    var select_zipcode = d3.select("#zipcode").property("value")
- 
-
-    d3.select("#org_details").select("tbody").selectAll("tr").remove() // removing the existing zipcode table to change for selected zip code table
-
-    d3.csv("/static/jsData/df_fran_sorted_by_zip.csv").then(function(csv_data)
-    {
-        csv_data.map(i => {
-
-            if (select_zipcode == i.Taxpayer_Zip_Code)
-            {
-               
-                fill_table(i)
-            }
-
-        })
-
-    })
-
-}
-
-
 
 
 // create a row for each object in the data
@@ -115,6 +65,22 @@ intial_page_load()
 
 
 
+function change_option(selected_zipcode)
+{
+    console.log(selected_zipcode)
+    myFunction() // to hide dropdown after selecting the zipcode
+    d3.select("#org_details").select("tbody").selectAll("tr").remove() // removing the existing zipcode table to change for selected zip code table
+
+    d3.csv("/static/jsData/df_fran_sorted_by_zip.csv").then(function(csv_data)
+    {
+        csv_data.map(i => {
+            if (selected_zipcode == i.Taxpayer_Zip_Code)
+            {
+                fill_table(i)
+            }
+        })
+    })
+}
 
 
 
