@@ -184,7 +184,18 @@
 
   /* drop down styling*/
 
+  /* Formating footer */
+  #source {
+    float:left;
+    text-align: left;
+ 
+}
 
+#team { 
+    float:right;
+    text-align: right;
+ 
+}
 
 
   

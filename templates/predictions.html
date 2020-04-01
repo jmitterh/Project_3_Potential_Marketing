@@ -37,6 +37,10 @@
               <a class="nav-link" href="{{ url_for('predictions') }}"">Model Predictions<span class="
                 sr-only">(current)</span></a>
             </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="https://github.com/jmitterh/Project_3_Potential_Marketing"
+                target="_blank">GitHub Repo<span class="sr-only">(current)</span></a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -148,14 +152,14 @@
         </div>
 
         <script type='text/javascript'>
-          var divElement = document.getElementById('viz1585617809541'); 
-          var vizElement = divElement.getElementsByTagName('object')[0]; 
-          vizElement.style.width = '100%'; 
-          vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px'; 
-          var scriptElement = document.createElement('script'); 
-          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; 
+          var divElement = document.getElementById('viz1585617809541');
+          var vizElement = divElement.getElementsByTagName('object')[0];
+          vizElement.style.width = '100%';
+          vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+          var scriptElement = document.createElement('script');
+          scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
           vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-          </script>
+        </script>
 
       </div>
     </div>
@@ -169,7 +173,7 @@
         <div class='tableauPlaceholder' id='viz1585613819357' style='position: relative'><noscript><a href='#'><img
                 alt=' '
                 src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Fo&#47;ForcastMap_15856123589720&#47;forcastmap&#47;1_rss.png'
-                style='border: none'/></a></noscript><object class='tableauViz' style='display:none;'>
+                style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
             <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
             <param name='embed_code_version' value='3' />
             <param name='site_root' value='' />
@@ -201,23 +205,34 @@
     <!-- End map -->
 
 
-    <!-- Footer -->
-    <footer class="page-footer font-small blue fixed-bottom">
-      <div class="footer-copyright" id="footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <p>
-                <h3>Source Links:</h3>
-                <a href="https://comptroller.texas.gov/" target="_blank">Comptroller Public Accounts</a><br>
-                <a href="https://hcad.org/" target="_blank">Harris County Appraisal District</a>
-              </p>
-            </div>
+  <!----------- Footer ----------->
+
+  <div class="row">
+
+    <div class="col-md-12 text-center">
+      <div class="card" id="footer">
+        <div class="card-footer">
+
+          <div id="source">
+            <h3>Source Links</h3>
+            <a href="https://comptroller.texas.gov/" target="_blank">Comptroller Public Accounts</a><br>
+            <a href="https://hcad.org/" target="_blank">Harris County Appraisal District</a>
           </div>
+          <div id="team">
+            <h3>Team Github</h3>
+            <a href="https://github.com/jmitterh" target="_blank">Jean Paul Mitterhofer</a><br>
+            <a href="https://github.com/baoxingwang" target="_blank">Baoxing Wang</a><br>
+            <a href="https://github.com/MahathiV" target="_blank">Mahathi Veluri</a><br>
+            <a href="https://github.com/42779XL" target="_blank">Xiaodi Lin</a><br>
+          </div>
+
         </div>
       </div>
-    </footer>
-    <!-- Footer -->
+    </div>
+
+  </div>
+
+  <!----------- Footer ----------->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
