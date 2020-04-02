@@ -121,16 +121,15 @@
 
         <div class="card">
           <div class="card-header">
-            <h4>ML process description</h4>
+            <h4>ML Process Description</h4>
           </div>
           <div class="card-body">
             <p>
-              We used machine learning to forecast the companies that file for franchise tax permit. Companies that
-              file for this permit are potential canidates for commercial real-estate offices.
-              Our forecast predicts the amount of new companies created per month, and per zipcode in the houston
-              area.<br><br>
-              For our project we are demonstrating the top 10 zipcodes with the highest amount of new companies for
-              the year of 2020 and 2021 per month.
+              The data we found has consistent timeline. ARIMA (auto regressive integrated moving average) is a class of 
+              models that discribes a given time series based on its own past values; that is, its own lags and the lagged 
+              forecast errors, so that the equation can be used to forecast future values.<br><br>
+              For our project we used usual ARIMA, auto ARIMA, SARIMA (seasonal ARIMA), and SARIMAX (SARIMA with seasonal_index)
+              4 models to complet a full processing to get the final prediction results.
             </p>
           </div>
         </div>
@@ -326,35 +325,6 @@
 
         <img class="myImg"
           src="{{ url_for('static', filename='model_process/seasonal_output/24_multiplicative_SARIMAX_model_summary.png') }}"
-          alt="image" style="width:100%;max-width:300px">
-
-      </div>
-    </div>
-    <!-- row 7 -->
-    <div class="row">
-      <div class="col-md-3">
-
-        <img class="myImg"
-          src="{{ url_for('static', filename='model_process/seasonal_output/acf_test_for MA_order.png') }}" alt="image"
-          style="width:100%;max-width:300px">
-
-      </div>
-      <div class="col-md-3">
-
-        <img class="myImg"
-          src="{{ url_for('static', filename='model_process/seasonal_output/autoARIMA_confint_output.png') }}"
-          alt="image" style="width:100%;max-width:300px">
-
-      </div>
-      <div class="col-md-3">
-
-        <img class="myImg" src="{{ url_for('static', filename='model_process/seasonal_output/model_accuracy.png') }}"
-          alt="image" style="width:100%;max-width:300px">
-
-      </div>
-      <div class="col-md-3">
-
-        <img class="myImg" src="{{ url_for('static', filename='model_process/seasonal_output/SARIMA_confint.png') }}"
           alt="image" style="width:100%;max-width:300px">
 
       </div>

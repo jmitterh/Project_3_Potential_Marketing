@@ -3,11 +3,56 @@
 
 # Project 3: Data-Estate
 
-Team:
+Team and Responsibilities:
 * Jean-Paul Mitterhofer
-* Mahathi Veluri 
+    * Finding data
+    * Storing raw data in database
+    * Data Munging
+    * Create tableua visuals 
+    * Setup flask
+    * Assist with html, css
+    * Readme, PPT
+    * Organized repository
+* Mahathi Veluri
+    * Created webpages
+        * navigation bar
+        * layout using bootstrap 
+        * footer
+    * Functionality with javascript and jquery
+    * Developed the css files
+    * Data Munging
+    * Create tableau visuals
 * Baoxing Wang
+    * Formatting Machine Learning data
+    * Correct errors, deal with missing values, normalization
+    * Choose models based on time series
+    * Assisted in evaluating models
+    * Parameter tunning
+    * Make predictions
+    * Create tableau visualizations
 * Xiaodi Lin
+    * The quantity & quality of data to use for Machine Learning
+    * Executing the machine learning model
+    * Make a prediction correctly as often as possible
+    * Used 4 models to make the forecasting
+    * Evaluate the models and training
+    * Make predictions
+
+
+
+
+ 
+
+ 
+6 - Parameter Tuning
+
+This step refers to hyperparameter tuning, which is an "artform" as opposed to a science
+Tune model parameters for improved performance
+Simple model hyperparameters may include: number of training steps, learning rate, initialization values and distribution, etc.
+ 
+7 - Make Predictions
+
+Using further (test set) data which have, until this point, been withheld from the model (and for which class labels are known), are used to test the model; a better approximation of how the model will perform in the real world
 
 ## Project Description
 
