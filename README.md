@@ -36,23 +36,7 @@ Team and Responsibilities:
     * Make a prediction correctly as often as possible
     * Used 4 models to make the forecasting
     * Evaluate the models and training
-    * Make predictions
-
-
-
-
- 
-
- 
-6 - Parameter Tuning
-
-This step refers to hyperparameter tuning, which is an "artform" as opposed to a science
-Tune model parameters for improved performance
-Simple model hyperparameters may include: number of training steps, learning rate, initialization values and distribution, etc.
- 
-7 - Make Predictions
-
-Using further (test set) data which have, until this point, been withheld from the model (and for which class labels are known), are used to test the model; a better approximation of how the model will perform in the real world
+    * Make predictions 
 
 ## Project Description
 
