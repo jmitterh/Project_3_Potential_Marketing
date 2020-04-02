@@ -19,7 +19,7 @@ Team and Responsibilities:
         * layout using bootstrap 
         * footer
     * Functionality with javascript and jquery
-    * Developed the css files
+    * Developed the css file
     * Data Munging
     * Create tableau visuals
 * Baoxing Wang
@@ -32,7 +32,7 @@ Team and Responsibilities:
     * Create tableau visualizations
 * Xiaodi Lin
     * The quantity & quality of data to use for Machine Learning
-    * Executing the machine learning model
+    * Executing the machine learning models
     * Make a prediction correctly as often as possible
     * Used 4 models to make the forecasting
     * Evaluate the models and training
