@@ -21,7 +21,8 @@
     <div class="row">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url_for('home') }}">Home </a>
+        <a class="navbar-brand" href="{{ url_for('home') }}" title="Home"><img src="./static/img/home.svg"
+            class="rounded" alt="Visual & Analysis" style="height:35px;width:35px;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -30,14 +31,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{{ url_for('visuals') }}">Visuals & Analysis</a>
+              <a class="nav-link" href="{{ url_for('visuals') }}" title="Visuals & Analysis"><img
+                  src="./static/img/bar_chart.svg" class="rounded" alt="Visual & Analysis"
+                  style="height:40px;width:40px;"></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="{{ url_for('predictions') }}">Model Predictions<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{ url_for('predictions') }}" title="Predictions"><img
+                  src="./static/img/prediction.svg" class="rounded" alt="Predictions"
+                  style="height:45px;width:45px;"><span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="https://github.com/jmitterh/Project_3_Potential_Marketing"
-                target="_blank">GitHub Repo</a>
+              <a class="nav-link" href="https://github.com/jmitterh/Project_3_Potential_Marketing" target="_blank"
+                title="Github"><img src="./static/img/github-brands.svg" class="rounded" alt="github"
+                  style="height:35px;width:35px;"></a>
             </li>
           </ul>
         </div>
@@ -203,34 +209,34 @@
     <!-- End map -->
 
 
-  <!----------- Footer ----------->
+    <!----------- Footer ----------->
 
-  <div class="row">
+    <div class="row">
 
-    <div class="col-md-12 text-center">
-      <div class="card" id="footer">
-        <div class="card-footer">
+      <div class="col-md-12 text-center">
+        <div class="card" id="footer">
+          <div class="card-footer">
 
-          <div id="source">
-            <h3>Source Links</h3>
-            <a href="https://comptroller.texas.gov/" target="_blank">Comptroller Public Accounts</a><br>
-            <a href="https://hcad.org/" target="_blank">Harris County Appraisal District</a>
+            <div id="source">
+              <h3>Source Links</h3>
+              <a href="https://comptroller.texas.gov/" target="_blank">Comptroller Public Accounts</a><br>
+              <a href="https://hcad.org/" target="_blank">Harris County Appraisal District</a>
+            </div>
+            <div id="team">
+              <h3>Team Github</h3>
+              <a href="https://github.com/jmitterh" target="_blank">Jean Paul Mitterhofer</a><br>
+              <a href="https://github.com/baoxingwang" target="_blank">Baoxing Wang</a><br>
+              <a href="https://github.com/MahathiV" target="_blank">Mahathi Veluri</a><br>
+              <a href="https://github.com/42779XL" target="_blank">Xiaodi Lin</a><br>
+            </div>
+
           </div>
-          <div id="team">
-            <h3>Team Github</h3>
-            <a href="https://github.com/jmitterh" target="_blank">Jean Paul Mitterhofer</a><br>
-            <a href="https://github.com/baoxingwang" target="_blank">Baoxing Wang</a><br>
-            <a href="https://github.com/MahathiV" target="_blank">Mahathi Veluri</a><br>
-            <a href="https://github.com/42779XL" target="_blank">Xiaodi Lin</a><br>
-          </div>
-
         </div>
       </div>
+
     </div>
 
-  </div>
-
-  <!----------- Footer ----------->
+    <!----------- Footer ----------->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>

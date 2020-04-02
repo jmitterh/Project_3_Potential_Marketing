@@ -61,7 +61,7 @@ pip install -r requirements.txt
     * HoustonData.ipynb - *Pulling our main source of data from our databse and munging it to provide only houston information with non-repeating values*
 3. [static/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/static)
     * [img/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/static/img)
-        * rosybrown.png - *Color for our app pages*
+        * png files - *Color for our app pages, and icons for clickable links on navigation bar*
     * [jsData/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/static/jsData)
         * HOUfran.csv - *List of current new companies. This data is from November 2019 through March 2020*
     * [model_process/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/static/model_process)
