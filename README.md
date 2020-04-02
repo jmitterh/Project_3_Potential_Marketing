@@ -42,7 +42,7 @@ pip install -r requirements.txt
     * [model/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/arima_ml_models/models)
         * [auto_model/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/arima_ml_models/models/auto_model)
             * csv files - *Are output of each zipcode csv file after running the machine learning algorithm*
-            * .ipynb - *This is the Model used in our project. Ten year monthly number of companies in the time span*
+            * MasterModel_zip1_fullsteps.ipynb - *This is the Model used in our project. Ten year monthly number of companies in the time span*
         * [historical model/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/arima_ml_models/models/historical_model)
             * ARIMA_model.ipyinb - *Auto model template, generate the most optimal model*
     * [Resources/](https://github.com/jmitterh/Project_3_Potential_Marketing/tree/master/arima_ml_models/Resources)
@@ -78,9 +78,10 @@ pip install -r requirements.txt
     * visual.html - *Our data visually displayed page*
 5. .gitignore - *Files/folders to ignore from being pushed into the repository. Files such as vscode, pycache, and ipynb checkpoints. Also ignored the folders that stored the large csv files of our data.*
 6. app.py - *Flask app initiation*
-7. LICENSE - *MIT license description*
-8. README.md - *This readme file that you are viewing*
-9. requirments.txt *Pip install dependencies for this application*
+7. Data-Estate Presentation.pptx - *Power Point Presentation*
+8. LICENSE - *MIT license description*
+9. README.md - *This readme file that you are viewing*
+10. requirments.txt *Pip install dependencies for this application*
 
 *  *asterisk represents folders that were ignored to our repository, but were used for our project.
 

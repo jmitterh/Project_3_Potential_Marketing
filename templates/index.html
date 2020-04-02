@@ -36,6 +36,10 @@
               <a class="nav-link" href="{{ url_for('predictions') }}">Model Predictions<span
                   class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="https://github.com/jmitterh/Project_3_Potential_Marketing"target="_blank">GitHub Repo<span
+                  class="sr-only">(current)</span></a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -170,40 +174,22 @@
       <div class="col-md-3">
 
         <img class="myImg"
-          src="{{ url_for('static', filename='model_process/seasonal_output/5_stationary_tests.png') }}" alt="image"
-          style="width:100%;max-width:300px">
-
-      </div>
-      <div class="col-md-3">
-
-        <img class="myImg"
-          src="{{ url_for('static', filename='model_process/seasonal_output/6_additive_ts_decomposed_components.png') }}"
-          alt="image" style="width:100%;max-width:300px">
-
-      </div>
-      <div class="col-md-3">
-
-        <img class="myImg" src="{{ url_for('static', filename='model_process/seasonal_output/SARIMA_confint.png') }}"
-          alt="image" style="width:100%;max-width:300px">
-
-      </div>
-      <div class="col-md-3">
-
-        <img class="myImg"
           src="{{ url_for('static', filename='model_process/seasonal_output/uncertainty trends.png') }}" alt="image"
           style="width:100%;max-width:300px">
 
       </div>
-
-    </div>
-    <!-- row 3 -->
-    <div class="row">
-
       <div class="col-md-3">
 
         <img class="myImg"
-          src="{{ url_for('static', filename='model_process/seasonal_output/6_additive_ts_decomposed_components.png') }}"
+          src="{{ url_for('static', filename='model_process/seasonal_output/ourliers with forecasting.png') }}"
           alt="image" style="width:100%;max-width:300px">
+
+      </div>
+      <div class="col-md-3">
+
+        <img class="myImg"
+          src="{{ url_for('static', filename='model_process/seasonal_output/5_stationary_tests.png') }}" alt="image"
+          style="width:100%;max-width:300px">
 
       </div>
       <div class="col-md-3">
@@ -213,6 +199,10 @@
           alt="image" style="width:100%;max-width:300px">
 
       </div>
+
+    </div>
+    <!-- row 3 -->
+    <div class="row">
       <div class="col-md-3">
 
         <img class="myImg"
@@ -227,10 +217,6 @@
           alt="image" style="width:100%;max-width:300px">
 
       </div>
-
-    </div>
-    <!-- row 4 -->
-    <div class="row">
       <div class="col-md-3">
 
         <img class="myImg"
@@ -245,6 +231,11 @@
           alt="image" style="width:100%;max-width:300px">
 
       </div>
+
+    </div>
+    <!-- row 4 -->
+    <div class="row">
+
       <div class="col-md-3">
         <img class="myImg"
           src="{{ url_for('static', filename='model_process/seasonal_output/13_model3_0-1-1_summary.png') }}"
@@ -257,10 +248,6 @@
           alt="image" style="width:100%;max-width:300px">
 
       </div>
-    </div>
-    <!-- row 5 -->
-    <div class="row">
-
       <div class="col-md-3">
 
         <img class="myImg"
@@ -275,6 +262,10 @@
           alt="image" style="width:100%;max-width:300px">
 
       </div>
+
+    </div>
+    <!-- row 5 -->
+    <div class="row">
       <div class="col-md-3">
 
         <img class="myImg"
@@ -289,10 +280,6 @@
           alt="image" style="width:100%;max-width:300px">
 
       </div>
-    </div>
-    <!-- row 6 -->
-    <div class="row">
-
       <div class="col-md-3">
 
         <img class="myImg"
@@ -307,7 +294,9 @@
           alt="image" style="width:100%;max-width:300px">
 
       </div>
-
+    </div>
+    <!-- row 6 -->
+    <div class="row">
       <div class="col-md-3">
 
         <img class="myImg"
@@ -322,11 +311,6 @@
           alt="image" style="width:100%;max-width:300px">
 
       </div>
-
-    </div>
-    <!-- row 7 -->
-    <div class="row">
-
       <div class="col-md-3">
 
         <img class="myImg"
@@ -341,6 +325,9 @@
           alt="image" style="width:100%;max-width:300px">
 
       </div>
+    </div>
+    <!-- row 7 -->
+    <div class="row">
       <div class="col-md-3">
 
         <img class="myImg"
@@ -355,10 +342,6 @@
           alt="image" style="width:100%;max-width:300px">
 
       </div>
-    </div>
-    <!-- row 8 -->
-    <div class="row">
-
       <div class="col-md-3">
 
         <img class="myImg" src="{{ url_for('static', filename='model_process/seasonal_output/model_accuracy.png') }}"
@@ -372,6 +355,7 @@
 
       </div>
     </div>
+
     <div class="row">
       <div class="col-md-12">
         <h4>Attempts On Seasonal-Output</h4>
@@ -566,20 +550,29 @@
   <!----------- Footer ----------->
 
   <div class="row">
+
     <div class="col-md-12 text-center">
       <div class="card" id="footer">
         <div class="card-footer">
-          <p>
-            <h3>Source Links:</h3>
+
+          <div id="source">
+            <h3>Source Links</h3>
             <a href="https://comptroller.texas.gov/" target="_blank">Comptroller Public Accounts</a><br>
             <a href="https://hcad.org/" target="_blank">Harris County Appraisal District</a>
-          </p>
+          </div>
+          <div id="team">
+            <h3>Team Github</h3>
+            <a href="https://github.com/jmitterh" target="_blank">Jean Paul Mitterhofer</a><br>
+            <a href="https://github.com/baoxingwang" target="_blank">Baoxing Wang</a><br>
+            <a href="https://github.com/MahathiV" target="_blank">Mahathi Veluri</a><br>
+            <a href="https://github.com/42779XL" target="_blank">Xiaodi Lin</a><br>
+          </div>
+
         </div>
       </div>
     </div>
+
   </div>
-
-
 
   <!----------- Footer ----------->
 
