@@ -30,6 +30,7 @@ Team and Responsibilities:
     * Parameter tunning
     * Make predictions
     * Create tableau visualizations
+    * PPT
 * Xiaodi Lin
     * The quantity & quality of data to use for Machine Learning
     * Executing the machine learning models
