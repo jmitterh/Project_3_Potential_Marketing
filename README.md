@@ -107,7 +107,8 @@ pip install -r requirements.txt
 
 
 ## Type of ML Analysis
-* ARIMA Model - Auto Regressive Integrated Moving Average, is a class of models that discribes a given time series based on its own past values; that is, its own lags and the lagged forecast errors, so that the equation can be used to forecast future values.
+* SARIMA Model - Seasonal Autoregressive Integrated Moving Average, SARIMA or Seasonal ARIMA, is an extension of ARIMA that explicitly supports univariate time series data with a seasonal component.
+It adds three new hyperparameters to specify the autoregression (AR), differencing (I) and moving average (MA) for the seasonal component of the series, as well as an additional parameter for the period of the seasonality.
 
 
 
