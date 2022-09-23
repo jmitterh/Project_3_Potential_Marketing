@@ -43,7 +43,7 @@ patsy==0.5.1
 pickleshare==0.7.5
 pmdarima==1.5.3
 prompt-toolkit==3.0.4
-protobuf==3.6.1
+protobuf==3.18.3
 Pygments==2.6.1
 pylint==2.4.4
 PyMeeus==0.3.7
